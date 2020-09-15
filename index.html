@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascirpt Examples</title>
+    <script>
+        //alert("Hello World!");
+    </script>
+    <style>
+        #randomImages{
+            width:500px;
+            height:400px;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <h5>Original content</h5>
+        <p>Hello i am second <span>SEcond Span Content</span> paragraph</p>
+
+        <p>
+          inside paragraph
+          <span>inside span</span>
+          inside paragraph
+        </p>
+      </div>
+      <div>
+        <h5>Output</h5>
+        <div id="output"></div>
+      </div>
+
+      <script>
+          var baseElement = document.querySelector("p");
+            document.getElementById("output").innerHTML =
+            (baseElement.querySelector("div span").innerHTML);
+
+      </script>
+
+    <div id="errorMessage" style="color:red;"></div>
+
+    <form method="POST" name="login" onsubmit="return validateForm();">
+        <fieldset><legend>Login</legend>
+        <input type="text" name="eml" placeholder="you@domain.com">
+        <input type="password" name="password" placeholder="xxxxxxxx">
+        <input type="submit" name="submit" value="Login" />
+        </fieldset>
+    </form>
+    <button onclick="ranImage()">Random Images</button>
+
+    <img src ="images/1.jpg" alt="Random Images" title="random images" id="randomImages" >
+
+
+
+    <form onsubmit="return getTotal()">
+        <input type="number" id="qty">
+        <input type="number" id="price">
+        <input type="submit" value="getResult">
+    </form>
+    
+    <div id="nettotal"></div>
+
+    <div id="date"></div>
+
+    <button onclick="window.close()">Close</button>
+
+    <div id="result" style="position:absolute; top:100px; right:50px;">
+
+    </div>
+
+    <div id="multable"></div>
+
+    <script>
+        document.writeln("<h1>program to displaay square of 1 to 10</h1>");
+            for(var i = 1; i <= 10; i++) {
+                document.writeln("The square of "+ i + "is "+ square(i));
+            }
+
+            function square ( y ){
+                return y * y;
+            }
+
+        var name="Class";
+        document.write("<h1>GOod Morning, "+name+"</h1>");
+    </script>
+<script>
+var page = "News"; 
+switch (page)
+{
+ case "Home":
+    { document.write("You selected Home");
+      break;
+    }
+ case "About": document.write("You selected About");
+ break
+ case "News": document.write("You selected News")
+ break
+ case "Login": document.write("You selected Login")
+ break
+ case "Links": document.write("You selected Links")
+ break
+ default:
+   document.write("Page Not Found");
+}
+</script>
+
+<button onclick="hello()">Hello</button>
+<script src="scripts/functions.js"></script>
+</body>
+</html>
