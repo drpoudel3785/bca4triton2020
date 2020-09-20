@@ -162,18 +162,15 @@ function validateForm(){
     document.login.eml.focus();
     return false;
    }
- 
   else if(email == "dharmarajpoudel@gmail.com" && pass == "dharma123")
   {
     window.location.href = "/welcome.html";
     return false;
   }
   else {
-
     document.getElementById("errorMessage").innerHTML = "Username and Password Not Valid";  
     document.login.eml.focus();
     return false;
-
   }
 return true;
 }
@@ -183,4 +180,35 @@ return true;
 //Ex- slider every 3 second images changes.
 //hint < body onload="slider()" > call garne
 //window.addEventListener("load", slider, false);
+//20th Sept 2020
 
+function admissionOpen(){
+  window.open('/admissionopen.html','popUpWindow','height=470,width=960,left=100,top=100,resizable=no,scrollbars=no,toolbar=yes,menubar=no,location=no,directories=no, status=yes');
+}
+
+
+
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
