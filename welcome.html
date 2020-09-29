@@ -7,6 +7,56 @@
 </head>
 <body>
     <h1>Welcome</h1>
-    
+    <script>
+        var uname = "Dharma";
+        
+        var upattern = /^([a-zA-Z]+){6,16}$/;
+       var isValidName = uname.match(upattern);
+
+       if(isValidName == null)
+       {
+          // alert("Name should alphabets only and between 6 to 16 character")
+       }
+       else
+       {
+         //  alert("Name match");
+       }
+
+       var uphone = "98511376185";
+       var ppattern = /^(98[0-9]*)$/;
+       var plength = uphone.length;
+       var mphone = uphone.match(ppattern);
+       if(mphone != null && plength == 10) 
+       { //alert("Number Match")
+       }
+       else {
+         //  alert("Number not match")
+       }
+
+    var pass="Pssw0rd";
+    var passfilter = /^(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+    var validpassword = pass.match(passfilter);
+    if(validpassword == null ){
+        alert("Password Strength not match")
+    }
+    else
+    {
+         alert("password Match ")
+    }
+
+
+    let uemail ="dharmagmail.com";
+    var emailfilter = /^\w+[\w-+\.]*\@\w+([-\.]\w+)*\.[a-zA-Z]{2,}$/ ;
+    var validuemail= uemail.match(emailfilter); 
+    if(validuemail == null ){
+        alert("Email is not valid");
+    }
+    else{
+        alert("Email is valid");
+    }
+
+
+
+    </script>
 </body>
 </html>
