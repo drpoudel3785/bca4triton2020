@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+<script>
+  
+    function newCookie(name,value,days) {
+     var days = 1;   // the number at the left reflects the number of days for the cookie to last
+                     // modify it according to your needs
+     if (days) {
+       var date = new Date();
+       date.setTime(date.getTime()+(days*24*60*60*1000));
+       var expires = "; expires="+date.toGMTString(); }
+       else var expires = "";
+       document.cookie = name+"="+value+expires+"; path=/"; }
+    
+    function readCookie(name) {
+       var cValue = name + "=";
+             var nuller = '';
+      if (document.cookie.indexOf(cValue) == -1)
+        return nuller;
+    
+       var ca = document.cookie.split(';');
+      for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+      if (c.indexOf(cValue) == 0) return c.substring(cValue.length,c.length); }
+     
+        return null; }
+    
+    function eraseCookie(name) {
+      newCookie(name,"",1); }
+    
+    function saveCookie(a) {
+        newCookie('theName', document.form.name.value);     // add a new cookie as shown at left for every
+        newCookie('thePassword', document.form.password.value);   // field you wish to have the script remember
+    }
+    
+    function deleteCookie(a) {
+      eraseCookie('theName');   // make sure to add the eraseCookie function for every field
+      eraseCookie('thePassword');
+    
+       document.form.name.value = '';   // add a line for every field
+       document.form.password.value = ''; }
+    //-->
+    </script>
+    
+</head>
+<body>
+  
+
+<form name="form" action=" " method="post" onSubmit="if (this.remember.checked) saveCookie(this)">
+    <fieldset>
+        <legend>Remember Me by Cookie</legend>
+    
+<input type="text" name="name" placeholder="Username"> <br/>
+<input type="password" name="password" placeholder="P@ssw0rd"> <br/>
+
+<input type="checkbox" id="remember" name="remember" />Remember Me <br/>
+<input type="submit" name="submit" value="Login"/> <br/>
+
+<input type="button" onclick="deleteCookie(this)" value="Delete Information" />
+</fieldset>
+</form>
+
+
+
+    <script>
+        
+        document.form.name.value = readCookie("theName");  // Change the names of the fields at right to match the ones in your form.
+        document.form.password.value = readCookie("thePassword");
+    </script>
+
+
+</body>
+</html>
